@@ -1,12 +1,26 @@
-gorelic
-=============
+GoRelic
+=======
 
 NewRelic middleware for martini framework.
 
-# Installation
- - Run "go get github.com/martini-contrib/gorelic"
- - Add following lines to your main() function:
-  gorelic.InitNewrelicAgent("7bceac019c7dcafae1ef95be3e3a3ff8866de266", "test martini app", true)
-  m.Use(gorelic.Handler) //m - is martini application instance
+## Usage
 
-Please, dont forget to change NewRelic license to your license
+~~~ go
+import(
+	"github.com/go-martini/martini"
+	"github.com/martini-contrib/gorelic"
+)
+
+func main(){
+	m := martini.Classic()
+
+	gorelic.InitNewrelicAgent("YOUR_NEWRELIC_LICENSE_KEY", "YOUR_APPLICATION_NAME", true)
+	m.Use(gorelic.Handler)
+
+	m.Run()
+}
+~~~
+
+## Authors
+
+* [Yuriy Vasiyarov](http://github.com/yvasiyarov)
