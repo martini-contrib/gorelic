@@ -7,6 +7,7 @@ NewRelic middleware for martini framework.
 
 ~~~ go
 import(
+	"github.com/go-martini/martini"
 	"github.com/martini-contrib/gorelic"
 )
 
